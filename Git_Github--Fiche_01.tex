@@ -1,0 +1,88 @@
+\documentclass[a4paper,11pt,french]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{babel}
+
+\usepackage{color}
+\usepackage{hyperref}
+
+\title{MEMO GIT-GITHUB \\
+ Généralités \\
+ Fiche N°1}
+\author{krystof}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{center}
+	\section*{{\color{red}Généralités}}
+\end{center}
+\medskip
+
+\verb|git| est un système de contrôle de version, qui permet d'obtenir un historique des modifications de son projet. \verb|git| permet des résolutions de conflit par la fusion (utile pour un projet collectif) et de travailler sur des branches (utile pour tester des variantes de son code). Il s'agit d'un système de \textit{versionning} distribué (décentralisé).
+\medskip
+
+Cette fiche \og Mémo \fg{} vient compléter l'aide-mémoire que l'on peut trouver à l'adresse suivante: \url{https://training.github.com/}.
+\medskip
+
+\section{Configuration des outils}
+Les options:
+\begin{description}
+	\item[1: ] \verb|--global|: pour une configuration globale.
+	\item[2: ] \verb|--local|: pour une configuration propre au dépôt.
+\end{description}
+\medskip
+
+Pour connaître l'état de sa configuration:
+\begin{verbatim}
+    $ git config --list
+\end{verbatim}
+\medskip
+
+\section{Créer des dépôts}
+Créer un nouveau dépôt crée le fichier \verb|.git| qui contient toute la \og magie \fg{} \verb|git|.
+\medskip
+
+\section{Effectuer des changements}
+Réaliser un \textit{commit} en ouvrant un éditeur \verb|vi| pour éditer le message du \textit{commit}:
+\begin{verbatim}
+    $ git commit
+\end{verbatim}
+\medskip
+
+Indexer plusieurs fichiers en même temps:
+\begin{verbatim}
+    $ git add *.extension
+    $ git add --all
+\end{verbatim}
+Attention à l'option \verb|--all| qui indexe l'ensemble des fichiers présents dans le projet.
+\medskip
+
+\section{Vérifier l'historique des versions}
+Affichage des trois derniers \textit{commit}:
+\begin{verbatim}
+    $ git log -n 3
+\end{verbatim}
+\medskip
+
+Affichage plus succinct avec uniquement les messages du \textit{commit} précédés des numéros de \textit{commit}:
+\begin{verbatim}
+    $ git log --oneline
+\end{verbatim}
+\medskip
+
+Affiche tous les \textit{commit} du fichier indiqué:
+\begin{verbatim}
+    $ git log -p <nom_du_fichier>
+\end{verbatim}
+\medskip
+
+\section{Pour approfondir ses connaissances}
+\begin{description}
+	\item[-] \url{https://www.youtube.com/watch?v=V6Zo68uQPqE}
+	\item[-] \url{https://grafikart.fr/formations/git}
+\end{description}
+
+\end{document}
